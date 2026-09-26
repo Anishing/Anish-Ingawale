@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anish Ingawale - AI & Data Science Portfolio</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#090d16',
+                        cardBg: '#121826',
+                        accentBlue: '#3b82f6',
+                        accentCyan: '#06b6d4',
+                        accentPurple: '#8b5cf6'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="antialiased selection:bg-blue-500 selection:text-white">
+
+    <!-- Background -->
+    <canvas id="bgCanvas"></canvas>
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+            <a href="#hero" class="flex items-center space-x-3">
+                <div class="logo-box">
+                    AI
+                </div>
+
+                <div>
+                    <span class="text-lg font-bold text-white block">
+                        Anish Ingawale
+                    </span>
+
+                    <span class="text-xs text-blue-400 font-medium">
+                        AI & Data Science Specialist
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+
+                <a href="#contact"
+                    class="hidden sm:inline-flex px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-xl">
+                    <i class="fa-solid fa-paper-plane mr-2"></i>
+                    Let's Connect
+                </a>
+
+                <!-- Mobile Button -->
+                <button id="mobileMenuBtn"
+                    class="md:hidden text-gray-300 hover:text-white p-2">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+            class="hidden md:hidden glass-card border-b border-white/10 px-4 pt-2 pb-6 space-y-3">
+
+            <a href="#about" class="block text-gray-300 py-1">About</a>
+            <a href="#skills" class="block text-gray-300 py-1">Skills</a>
+            <a href="#projects" class="block text-gray-300 py-1">Projects</a>
+            <a href="#education" class="block text-gray-300 py-1">Education</a>
+            <a href="#contact" class="block text-gray-300 py-1">Contact</a>
+
+        </div>
+    </header>
+
+
+    <main class="relative z-10 pt-20">
+
+        <!-- HERO -->
+        <section id="hero"
+            class="min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16">
+
+            <div class="max-w-5xl mx-auto text-center">
+
+                <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-card text-blue-400 text-xs sm:text-sm font-semibold mb-8">
+                    <span class="status-dot"></span>
+                    <span>
+                        M.Sc. Artificial Intelligence & Data Science Student
+                    </span>
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white mb-6">
+                    Hi, I'm
+                    <span class="gradient-text">
+                        Anish Ingawale
+                    </span>
+                </h1>
+
+                <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+                    Passionate AI and Data Science enthusiast based in Maharashtra.
+                    Building intelligent models, secure machine learning systems,
+                    and data-driven full-stack applications with Python, SQL,
+                    and advanced neural architectures.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+
+                    <a href="#projects"
+                        class="w-full sm:w-auto px-8 py-4 hero-btn">
+                        <i class="fa-solid fa-code"></i>
+                        <span>Explore Projects</span>
+                    </a>
+
+                    <a href="#contact"
+                        class="w-full sm:w-auto px-8 py-4 glass-card text-white font-semibold rounded-2xl">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Get in Touch</span>
+                    </a>
+
+                </div>
+
+
+                <!-- STATS -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-4xl mx-auto">
+
+                    <div class="glass-card stat-card">
+                        <div class="text-3xl font-extrabold text-blue-400">
+                            M.Sc.
+                        </div>
+                        <div class="text-xs text-gray-400">
+                            AI & Data Science
+                        </div>
+                    </div>
+
+                    <div class="glass-card stat-card">
+                        <div class="text-3xl font-extrabold text-cyan-400">
+                            Python
+                        </div>
+                        <div class="text-xs text-gray-400">
+                            & Machine Learning
+                        </div>
+                    </div>
+
+                    <div class="glass-card stat-card">
+                        <div class="text-3xl font-extrabold text-purple-400">
+                            SQL & Git
+                        </div>
+                        <div class="text-xs text-gray-400">
+                            Data Management
+                        </div>
+                    </div>
+
+                    <div class="glass-card stat-card">
+                        <div class="text-3xl font-extrabold text-emerald-400">
+                            Indira
+                        </div>
+                        <div class="text-xs text-gray-400">
+                            College, Maharashtra
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ABOUT -->
+        <section id="about"
+            class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+
+            <div class="glass-card rounded-3xl p-8 sm:p-12">
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                    <div class="lg:col-span-5 space-y-6">
+
+                        <div class="text-blue-400 text-sm font-semibold uppercase">
+                            <i class="fa-solid fa-user-shield"></i>
+                            About Me
+                        </div>
+
+                        <h2 class="text-3xl sm:text-4xl font-bold text-white">
+                            Driven by Data,
+                            Inspired by Intelligence
+                        </h2>
+
+                        <p class="text-gray-300 leading-relaxed">
+                            I am currently pursuing my
+                            <strong class="text-white">
+                                M.Sc. in Artificial Intelligence and Data Science
+                            </strong>
+                            at
+                            <strong class="text-white">
+                                Indira College
+                            </strong>
+                            in Maharashtra.
+                            My academic focus centers around robust machine
+                            learning models, predictive data analytics,
+                            and secure software applications.
+                        </p>
+
+                        <p class="text-gray-300 leading-relaxed">
+                            Whether it's detecting malicious phishing threats
+                            using algorithmic classification or building
+                            practical platforms like camera gear rental systems,
+                            I bridge the gap between complex algorithms
+                            and intuitive user experiences.
+                        </p>
+
+                        <div class="pt-4 flex items-center space-x-4">
+
+                            <a href="https://github.com"
+                                target="_blank"
+                                class="social-btn">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+
+                            <a href="https://linkedin.com"
+                                target="_blank"
+                                class="social-btn">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+
+                            <a href="mailto:anish@example.com"
+                                class="social-btn">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+                        <div class="glass-card mini-card">
+                            <div class="icon blue">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+
+                            <h3 class="card-title">
+                                Advanced Education
+                            </h3>
+
+                            <p class="card-text">
+                                M.Sc in Artificial Intelligence & Data Science
+                                at Indira College, Maharashtra.
+                            </p>
+                        </div>
+
+
+                        <div class="glass-card mini-card">
+                            <div class="icon cyan">
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+
+                            <h3 class="card-title">
+                                Machine Learning
+                            </h3>
+
+                            <p class="card-text">
+                                Building predictive models, classifiers,
+                                and intelligent data pipelines in Python.
+                            </p>
+                        </div>
+
+
+                        <div class="glass-card mini-card">
+                            <div class="icon purple">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+
+                            <h3 class="card-title">
+                                Data & SQL
+                            </h3>
+
+                            <p class="card-text">
+                                Efficient data querying, relational database
+                                management, and schema design.
+                            </p>
+                        </div>
+
+
+                        <div class="glass-card mini-card">
+                            <div class="icon green">
+                                <i class="fa-solid fa-code-branch"></i>
+                            </div>
+
+                            <h3 class="card-title">
+                                Version Control
+                            </h3>
+
+                            <p class="card-text">
+                                Collaborative development using Git,
+                                GitHub, and professional workflows.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- SKILLS -->
+        <section id="skills"
+            class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+
+            <div class="text-center max-w-3xl mx-auto mb-16">
+
+                <span class="section-label">
+                    Technical Expertise
+                </span>
+
+                <h2 class="section-title">
+                    Core Competencies & Skills
+                </h2>
+
+                <p class="text-gray-400">
+                    Tools, languages, and frameworks I use to build
+                    intelligent applications and analyze complex datasets.
+                </p>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- PYTHON -->
+                <div class="glass-card skill-card">
+
+                    <div class="flex items-center space-x-4 mb-4">
+
+                        <div class="skill-icon blue">
+                            <i class="fa-brands fa-python"></i>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-bold text-white">
+                                Python Programming
+                            </h3>
+
+                            <span class="text-xs text-blue-400">
+                                Core Language & Libraries
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <p class="text-sm text-gray-300 mb-4">
+                        Writing clean Python code for data processing,
+                        automation, and algorithmic problem solving.
+                    </p>
+
+                    <div class="progress">
+                        <div class="progress-fill blue-fill"
+                            style="width:95%">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- ML -->
+                <div class="glass-card skill-card">
+
+                    <div class="flex items-center space-x-4 mb-4">
+
+                        <div class="skill-icon cyan">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-bold text-white">
+                                Machine Learning
+                            </h3>
+
+                            <span class="text-xs text-cyan-400">
+                                Scikit-Learn, Pandas, NumPy
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <p class="text-sm text-gray-300 mb-4">
+                        Building predictive models, evaluating classifiers,
+                        preprocessing data and feature engineering.
+                    </p>
+
+                    <div class="progress">
+                        <div class="progress-fill cyan-fill"
+                            style="width:90%">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- SQL -->
+                <div class="glass-card skill-card">
+
+                    <div class="flex items-center space-x-4 mb-4">
+
+                        <div class="skill-icon purple">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-bold text-white">
+                                SQL & Databases
+                            </h3>
+
+                            <span class="text-xs text-purple-400">
+                                Data Extraction & Querying
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <p class="text-sm text-gray-300 mb-4">
+                        Designing relational schemas, joins,
+                        aggregations and database queries.
+                    </p>
+
+                    <div class="progress">
+                        <div class="progress-fill purple-fill"
+                            style="width:88%">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- GIT -->
+                <div class="glass-card skill-card">
+
+                    <div class="flex items-center space-x-4 mb-4">
+
+                        <div class="skill-icon green">
+                            <i class="fa-brands fa-git-alt"></i>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-bold text-white">
+                                Git & GitHub
+                            </h3>
+
+                            <span class="text-xs text-emerald-400">
+                                Version Control
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <p class="text-sm text-gray-300 mb-4">
+                        Managing repositories, branching strategies,
+                        collaborative workflows and deployment.
+                    </p>
+
+                    <div class="progress">
+                        <div class="progress-fill green-fill"
+                            style="width:92%">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- CYBER -->
+                <div class="glass-card skill-card">
+
+                    <div class="flex items-center space-x-4 mb-4">
+
+                        <div class="skill-icon orange">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-bold text-white">
+                                Cybersecurity & AI
+                            </h3>
+
+                            <span class="text-xs text-amber-400">
+                                Threat Detection Systems
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <p class="text-sm text-gray-300 mb-4">
+                        Developing ML models for phishing website detection,
+                        security classification and risk analysis.
+                    </p>
+
+                    <div class="progress">
+                        <div class="progress-fill orange-fill"
+                            style="width:85%">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- DATA SCIENCE -->
+                <div class="glass-card skill-card">
+
+                    <div class="flex items-center space-x-4 mb-4">
+
+                        <div class="skill-icon rose">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-bold text-white">
+                                Data Science & Stats
+                            </h3>
+
+                            <span class="text-xs text-rose-400">
+                                Data Analysis & Insights
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <p class="text-sm text-gray-300 mb-4">
+                        EDA, statistical testing, data visualization,
+                        and extracting insights from raw data.
+                    </p>
+
+                    <div class="progress">
+                        <div class="progress-fill rose-fill"
+                            style="width:88%">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- PROJECTS -->
+        <section id="projects"
+            class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+
+            <div class="text-center max-w-3xl mx-auto mb-16">
+
+                <span class="section-label">
+                    Featured Work
+                </span>
+
+                <h2 class="section-title">
+                    Featured Projects
+                </h2>
+
+                <p class="text-gray-400">
+                    Highlights of my practical machine learning
+                    and web application development work.
+                </p>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                <!-- PROJECT 1 -->
+                <div class="glass-card project-card">
+
+                    <div class="p-8">
+
+                        <div class="flex items-center justify-between mb-6">
+
+                            <span class="project-tag blue-tag">
+                                Machine Learning & Security
+                            </span>
+
+                            <a href="https://github.com"
+                                target="_blank"
+                                class="text-gray-400">
+                                <i class="fa-brands fa-github text-lg"></i>
+                            </a>
+
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-white mb-3">
+                            Phishing Website Detection
+                        </h3>
+
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                            An intelligent machine learning system designed
+                            to detect and classify malicious phishing websites
+                            based on URL characteristics and structural
+                            webpage features.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2 mb-6">
+
+                            <span class="tech">Python</span>
+                            <span class="tech">Scikit-Learn</span>
+                            <span class="tech">Pandas</span>
+                            <span class="tech">Classification</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="px-8 pb-8">
+
+                        <div class="project-footer blue-footer">
+
+                            <span>
+                                <i class="fa-solid fa-check-circle mr-2"></i>
+                                High Accuracy Prediction Model
+                            </span>
+
+                            <a href="https://github.com"
+                                target="_blank">
+                                View Source →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROJECT 2 -->
+                <div class="glass-card project-card">
+
+                    <div class="p-8">
+
+                        <div class="flex items-center justify-between mb-6">
+
+                            <span class="project-tag cyan-tag">
+                                Web Application & Database
+                            </span>
+
+                            <a href="https://github.com"
+                                target="_blank"
+                                class="text-gray-400">
+                                <i class="fa-brands fa-github text-lg"></i>
+                            </a>
+
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-white mb-3">
+                            RentMyCameraGear
+                        </h3>
+
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                            A platform for camera equipment rentals.
+                            Users can browse professional cameras,
+                            lenses and accessories, manage bookings,
+                            and handle transactions backed by SQL.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2 mb-6">
+
+                            <span class="tech">Python</span>
+                            <span class="tech">SQL</span>
+                            <span class="tech">Database Design</span>
+                            <span class="tech">Full-Stack</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="px-8 pb-8">
+
+                        <div class="project-footer cyan-footer">
+
+                            <span>
+                                <i class="fa-solid fa-check-circle mr-2"></i>
+                                Seamless Rental Management
+                            </span>
+
+                            <a href="https://github.com"
+                                target="_blank">
+                                View Source →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- EDUCATION -->
+        <section id="education"
+            class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+
+            <div class="text-center max-w-3xl mx-auto mb-16">
+
+                <span class="section-label">
+                    Academic Journey
+                </span>
+
+                <h2 class="section-title">
+                    Education & Background
+                </h2>
+
+            </div>
+
+
+            <div class="max-w-3xl mx-auto">
+
+                <div class="glass-card p-8 rounded-3xl">
+
+                    <div class="space-y-12">
+
+                        <div>
+
+                            <span class="section-label">
+                                Current Degree
+                            </span>
+
+                            <h3 class="text-xl font-bold text-white mt-1">
+                                M.Sc. in Artificial Intelligence & Data Science
+                            </h3>
+
+                            <p class="text-gray-400 text-sm mt-1">
+                                Indira College, Maharashtra
+                            </p>
+
+                            <p class="text-gray-300 text-sm mt-3">
+                                Specializing in machine learning algorithms,
+                                statistical data analysis, neural networks,
+                                and data science pipelines.
+                            </p>
+
+                        </div>
+
+
+                        <div>
+
+                            <span class="text-cyan-400 text-xs font-semibold uppercase">
+                                Technical Foundation
+                            </span>
+
+                            <h3 class="text-xl font-bold text-white mt-1">
+                                Software & Data Engineering Focus
+                            </h3>
+
+                            <p class="text-gray-400 text-sm mt-1">
+                                Python, SQL, Git & GitHub
+                            </p>
+
+                            <p class="text-gray-300 text-sm mt-3">
+                                Building software systems, database
+                                architectures and version-controlled projects.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT -->
+        <section id="contact"
+            class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+
+            <div class="glass-card rounded-3xl p-8 sm:p-12">
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+
+                    <div class="lg:col-span-5 space-y-6">
+
+                        <span class="section-label">
+                            Get In Touch
+                        </span>
+
+                        <h2 class="text-3xl sm:text-4xl font-bold text-white">
+                            Let's Build Something Intelligent Together
+                        </h2>
+
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Whether you have an AI/Data Science project,
+                            want to discuss machine learning research,
+                            or explore collaboration opportunities,
+                            my inbox is open.
+                        </p>
+
+                        <div class="space-y-4">
+
+                            <div class="contact-item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>Maharashtra, India</span>
+                            </div>
+
+                            <div class="contact-item">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>anish.ingawale@example.com</span>
+                            </div>
+
+                            <div class="contact-item">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <span>Indira College</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="lg:col-span-7">
+
+                        <form id="contactForm">
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                                <div>
+                                    <label>Your Name</label>
+                                    <input type="text"
+                                        required
+                                        placeholder="John Doe">
+                                </div>
+
+                                <div>
+                                    <label>Your Email</label>
+                                    <input type="email"
+                                        required
+                                        placeholder="john@example.com">
+                                </div>
+
+                            </div>
+
+                            <div>
+                                <label>Subject</label>
+                                <input type="text"
+                                    required
+                                    placeholder="Project Inquiry">
+                            </div>
+
+                            <div>
+                                <label>Message</label>
+                                <textarea rows="4"
+                                    required
+                                    placeholder="Hello Anish..."></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="submit-btn">
+
+                                <i class="fa-solid fa-paper-plane"></i>
+                                Send Message
+
+                            </button>
+
+                            <div id="formSuccess"
+                                class="hidden success-message">
+
+                                <i class="fa-solid fa-circle-check mr-2"></i>
+                                Thank you! Your message has been sent.
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="glass-nav py-8 border-t border-white/10">
+
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+
+            <div class="text-sm text-gray-400">
+                © 2026
+                <strong class="text-white">
+                    Anish Ingawale
+                </strong>
+                . All rights reserved.
+            </div>
+
+            <div class="flex items-center space-x-6">
+
+                <a href="https://github.com"
+                    target="_blank">
+                    <i class="fa-brands fa-github text-lg"></i>
+                </a>
+
+                <a href="https://linkedin.com"
+                    target="_blank">
+                    <i class="fa-brands fa-linkedin text-lg"></i>
+                </a>
+
+                <a href="mailto:anish@example.com">
+                    <i class="fa-solid fa-envelope text-lg"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Your JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
